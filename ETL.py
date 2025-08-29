@@ -43,11 +43,11 @@ connection.close()
 sqlitefile = "test.db"
 conn = sqlite3.connect(sqlitefile)
 c = conn.cursor()
-f = open('selecttop100.sql','r')
+f = open('counties_with_highest_range_average.sql','r')
 sql = f.read()
 
 df = pd.read_sql_query(sql,conn)
-df.to_csv("selecttop100.csv", index=False)
+df.to_csv("counties_with_highest_range_average.csv", index=False)
 
 print("export of", export1, "complete, saved in", current_directory)
 
@@ -86,3 +86,4 @@ WHERE
 
 data_frame = pd.read_sql(query, conn)
 data_frame.to_csv(export3, index=False)
+print("Exported", export3, "successfully")
