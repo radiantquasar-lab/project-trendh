@@ -39,7 +39,7 @@ df.to_sql(name_table, connection, if_exists='replace', index=False)
 connection.commit()
 connection.close()
 
-#Selecting the Top 100 fuel efficient cars
+#Showing which counties have the highest range of electric cars
 sqlitefile = "test.db"
 conn = sqlite3.connect(sqlitefile)
 c = conn.cursor()
@@ -86,4 +86,4 @@ WHERE
 
 data_frame = pd.read_sql(query, conn)
 data_frame.to_csv(export3, index=False)
-print("Exported", export3, "successfully")
+print("Exported", export3, "successfully, saved in", current_directory)
